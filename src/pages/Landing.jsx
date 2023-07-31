@@ -8,14 +8,13 @@ const Landing = () => {
   return (
     <Wrapper>
       <nav>
-        {/* <Logo /> */}
-        <h1>JobHuntX</h1>
+        <Logo />
       </nav>
       <div className='container page'>
         <div className='info'>
-          <h1>
+          <h2>
             Career <span>Path</span> Navigator
-          </h1>
+          </h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis,
             saepe! Obcaecati aliquam provident similique maiores aut. Voluptatum
