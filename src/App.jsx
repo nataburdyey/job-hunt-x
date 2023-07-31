@@ -6,7 +6,6 @@ import { Landing, Error, Dashboard, Register } from './pages';
 
 function App() {
   return (
-    <ToastContainer>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Dashboard />} />
@@ -14,8 +13,8 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='*' element={<Error />} />
         </Routes>
+        <ToastContainer position='top-center'/>
       </BrowserRouter>
-    </ToastContainer>
   );
 }
 
