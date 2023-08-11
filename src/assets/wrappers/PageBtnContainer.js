@@ -19,13 +19,13 @@ const Wrapper = styled.section`
     height: 40px;
     font-weight: 700;
     font-size: 1.25rem;
-    color: var(--primary-500);
+    color: var(--primary-600);
     transition: var(--transition);
     border-radius: var(--borderRadius);
     cursor: pointer;
   }
   .active {
-    background: var(--primary-500);
+    background: var(--primary-700);
     color: var(--white);
   }
   .prev-btn,
@@ -35,7 +35,7 @@ const Wrapper = styled.section`
     background: var(--white);
     border-color: transparent;
     border-radius: var(--borderRadius);
-    color: var(--primary-500);
+    color: var(--primary-700);
     text-transform: capitalize;
     letter-spacing: var(--letterSpacing);
     display: flex;
