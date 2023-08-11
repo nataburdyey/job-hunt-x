@@ -20,11 +20,10 @@ const Landing = () => {
             saepe! Obcaecati aliquam provident similique maiores aut. Voluptatum
             quos facere temporibus!
           </p>
+          <Link to='/register' className='btn btn-hero'>
+            Login/Register
+          </Link>
         </div>
-
-        <Link to='/register' className='btn btn-hero'>
-          Login/Register
-        </Link>
         <img src={main} alt='Job Hunt' className='img main-img' />
       </div>
     </Wrapper>

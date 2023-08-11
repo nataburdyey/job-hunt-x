@@ -1,9 +1,8 @@
+import Wrapper from '../assets/wrappers/Navbar';
+import { FaAlignLeft, FaUserCircle, FaCaretDown } from 'react-icons/fa';
+import Logo from './Logo';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { FaAlignLeft, FaUserCircle, FaCaretDown } from 'react-icons/fa';
-
-import Wrapper from '../assets/wrappers/Navbar';
-import Logo from './Logo';
 import { toggleSidebar, clearStore } from '../features/user/userSlice';
 
 const Navbar = () => {
@@ -15,10 +14,6 @@ const Navbar = () => {
     dispatch(toggleSidebar());
   };
 
-  const logout = () => {
-    dispatch(clearStore('Logout Successful...'));
-  };
-
   return (
     <Wrapper>
       <div className='nav-center'>
@@ -27,7 +22,7 @@ const Navbar = () => {
         </button>
         <div>
           <Logo />
-          <h3 className='logo-text'>Dashboard</h3>
+          <h3 className='logo-text'>dashboard</h3>
         </div>
         <div className='btn-container'>
           <button
@@ -40,8 +35,12 @@ const Navbar = () => {
             <FaCaretDown />
           </button>
           <div className={showLogout ? 'dropdown show-dropdown' : 'dropdown'}>
-            <button type='button' className='dropdown-btn' onClick={logout}>
-              Logout
+            <button
+              type='button'
+              className='dropdown-btn'
+              onClick={() => dispatch(clearStore('Logging out...'))}
+            >
+              logout
             </button>
           </div>
         </div>
@@ -49,5 +48,4 @@ const Navbar = () => {
     </Wrapper>
   );
 };
-
 export default Navbar;
