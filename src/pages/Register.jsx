@@ -31,7 +31,6 @@ const Register = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log('submit');
     const { name, email, password, isMember } = values;
     if (!email || !password || (!isMember && !name)) {
       toast.error('Please Fill Out All Fields');
@@ -89,8 +88,6 @@ const Register = () => {
           className='btn btn-block'
           disabled={isLoading}
           onClick={() => {
-            console.log('demo');
-            
             dispatch(
               loginUser({ email: 'testUser@test.com', password: 'secret' })
             );
