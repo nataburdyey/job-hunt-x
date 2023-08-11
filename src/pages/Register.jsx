@@ -31,6 +31,7 @@ const Register = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    console.log('submit');
     const { name, email, password, isMember } = values;
     if (!email || !password || (!isMember && !name)) {
       toast.error('Please Fill Out All Fields');
@@ -48,10 +49,10 @@ const Register = () => {
   };
 
   useEffect(() => {
-    if (user){
-      setTimeout(()=>{
-        navigate('/')
-      }, 2000)
+    if (user) {
+      setTimeout(() => {
+        navigate('/');
+      }, 2000);
     }
   }, [user]);
 
@@ -84,15 +85,19 @@ const Register = () => {
           {isLoading ? 'Loading...' : 'Submit'}
         </button>
         <button
-  type='button'
-  className='btn btn-block'
-  disabled={isLoading}
-  onClick={() => {
-    dispatch(loginUser({ email: 'testUser@test.com', password: 'secret' }));
-  }}
->
-  {isLoading ? 'loading...' : 'Preview as a Test User'}
-</button>
+          type='button'
+          className='btn btn-block'
+          disabled={isLoading}
+          onClick={() => {
+            console.log('demo');
+            
+            dispatch(
+              loginUser({ email: 'testUser@test.com', password: 'secret' })
+            );
+          }}
+        >
+          {isLoading ? 'Loading...' : 'Preview as a Test User'}
+        </button>
         <p>
           {values.isMember ? 'Not a member yet?' : 'Already a member'}
           <button type='button' onClick={toggleMember} className='member-btn'>
